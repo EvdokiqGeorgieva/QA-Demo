@@ -1,0 +1,21 @@
+{
+    "name": "login-backend",
+    "version": "1.0.0",
+    "description": "Simple backend for testing purposes",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "tests": "npx playwright test tests/api.spec.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.20.3",
+        "cors": "^2.8.5",
+        "express": "^4.21.2",
+        "playwright": "^1.49.1"
+    },
+    "devDependencies": {
+        "@playwright/test": "^1.49.1"
+    },
+    "author": "Eva G.",
+    "license": "ISC"
+}

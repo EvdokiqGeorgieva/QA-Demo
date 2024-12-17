@@ -1,0 +1,21 @@
+{
+    "name": "login-frontend",
+    "version": "1.0.0",
+    "description": "Simple frontend for testing purposes",
+  "main": "/src/app.js",
+    "scripts": {
+        "start": "react-scripts start",
+        "test": "react-scripts test",
+        "build": "react-scripts build",
+        "tests": "npx playwright test tests/ui.spec.js"
+    },
+    "dependencies": {
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
+    },
+    "devDependencies": {
+        "@playwright/test": "^1.49.1"
+    },
+    "author": "Eva G.",
+    "license": "ISC"
+  }
