@@ -1,0 +1,48 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  install-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22.x'
+
+      # Step 3: Install dependencies for the backend
+      - name: Install backend dependencies
+        run: |
+          cd backend
+          npm install
+
+      # Step 4: Run backend tests
+      - name: Run backend Playwright tests
+        run: |
+          cd backend
+          npm run tests
+
+      # Step 5: Install dependencies for the frontend
+      - name: Install frontend dependencies
+        run: |
+          cd frontend
+          npm install
+
+      # Step 6: Run frontend tests
+      - name: Run frontend Playwright tests
+        run: |
+          cd frontend
+          npm run tests

@@ -1,0 +1,33 @@
+name: Sync Test Cases to Notion
+
+on:
+  workflow_dispatch:  # Allows for manual trigger from GitHub UI
+
+jobs:
+  sync-notion:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '22.x'
+
+    - name: Install dependencies
+      run: |
+        npm install
+
+    - name: Run sync script
+      run: |
+        node publishTestCases.js
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # This is automatically provided by GitHub Actions
+        NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+        NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        GITHUB_OWNER: ${{ secrets.GITHUB_OWNER }}
+        GITHUB_OWNER_REPO: ${{ secrets.GITHUB_OWNER_REPO }}
+        GITHUB_REPO: ${{ secrets.GITHUB_REPO }}
+        PROJECT_TITLE: ${{ secrets.PROJECT_TITLE }}
