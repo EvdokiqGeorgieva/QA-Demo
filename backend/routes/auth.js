@@ -1,6 +1,7 @@
-const express = require('express');
+import express from 'express';
+import users from '../data/users.json'
+
 const router = express.Router();
-const users = require('../data/users.json');
 
 router.post('/login', (req, res) => {
     const { username, password } = req.body;

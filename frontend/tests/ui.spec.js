@@ -1,6 +1,6 @@
-const { test, expect } = require('@playwright/test');
-const locators = require('./locators.js');
-const { URL, USERS, MESSAGES } = require('./constants.js');
+import { test, expect } from '@playwright/test';
+import * as locators from './locators.js';
+import { URL, USERS, MESSAGES } from './constants.js';
 
 test.describe('Login Page UI Tests', () => {
     test('login form is displayed', async ({ page }) => {

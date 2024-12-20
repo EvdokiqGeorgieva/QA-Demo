@@ -1,5 +1,5 @@
-const { test, expect, request } = require('@playwright/test');
-const { URL, USERS, MESSAGES } = require('./constants.js');
+import { test, expect, request } from '@playwright/test';
+import { URL, USERS, MESSAGES } from './constants.js';
 
 test.describe('API Endpoint Tests', () => {
     let apiContext;

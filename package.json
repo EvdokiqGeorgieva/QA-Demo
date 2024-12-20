@@ -7,7 +7,7 @@
     "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
     "start:frontend": "npm --prefix frontend start",
     "start:backend": "npm --prefix backend start",
-    "test": "npx playwright test", 
+    "test": "npx playwright test",
     "test:frontend": "npm --prefix frontend run tests",
     "test:backend": "npm --prefix backend run tests",
     "build": "npm run build:frontend && npm run build:backend",
@@ -16,7 +16,11 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "concurrently": "^7.0.0"
+    "@notionhq/client": "^2.2.15",
+    "axios": "^1.7.9",
+    "concurrently": "^7.0.0",
+    "dotenv": "^16.4.7",
+    "octokit": "^4.0.2"
   },
   "devDependencies": {
     "eslint": "^8.0.0",
@@ -25,5 +29,6 @@
   },
   "keywords": [],
   "author": "Eva G.",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module"
 }
