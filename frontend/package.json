@@ -7,7 +7,7 @@
     "start": "react-scripts start",
     "test": "react-scripts test",
     "build": "react-scripts build",
-    "tests": "npx playwright test tests/ui.spec.js"
+    "test:ui": "npx playwright test tests/ui.spec.js"
   },
   "dependencies": {
     "react": "^19.0.0",

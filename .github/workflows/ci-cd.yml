@@ -38,16 +38,25 @@ jobs:
         env:
           PORT: 3001
 
-      # Step 5: Wait for backend to be ready
-      - name: Wait for backend to start
+      # Step 5: Start backend server
+      - name: Start frontend server
+        run: |
+          cd ../frontend
+          npm start | tee backend.log &
+        env:
+          PORT: 3000
+
+      # Step 6: Wait for servers to start
+      - name: Wait for servers to start
         run: |
           sleep 20
           npx wait-on http://localhost:3001 --timeout 120000 --interval 5000 --log
+          npx wait-on http://localhost:3000 --timeout 120000 --interval 5000 --log
 
-      # Step 6: Run backend tests
+      # Step 7: Run backend tests
       - name: Run backend Playwright tests
         run: npm run test:backend
 
-      # Step 7: Run frontend tests
+      # Step 8: Run frontend tests
       - name: Run frontend Playwright tests
         run: npm run test:frontend

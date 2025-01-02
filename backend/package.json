@@ -5,7 +5,7 @@
     "main": "app.js",
     "scripts": {
         "start": "node app.js",
-        "tests": "npx playwright test tests/api.spec.js"
+        "test": "npx playwright test tests/api.spec.js"
     },
     "dependencies": {
         "body-parser": "^1.20.3",
