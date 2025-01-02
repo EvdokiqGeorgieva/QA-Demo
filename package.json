@@ -19,6 +19,7 @@
     "@notionhq/client": "^2.2.15",
     "axios": "^1.7.9",
     "concurrently": "^7.0.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "octokit": "^4.0.2"
   },

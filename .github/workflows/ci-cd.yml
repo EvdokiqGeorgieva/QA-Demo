@@ -25,7 +25,10 @@ jobs:
 
       # Step 3: Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          cd backend && npm install
+          cd ../frontend && npm install
 
       # Step 4: Start backend server
       - name: Start backend server
@@ -37,7 +40,7 @@ jobs:
 
       # Step 5: Wait for backend to be ready
       - name: Wait for backend to start
-        run: npx wait-on http://localhost:3001
+        run: npx wait-on http://localhost:3001 --timeout 3000
 
       # Step 6: Run backend tests
       - name: Run backend Playwright tests
