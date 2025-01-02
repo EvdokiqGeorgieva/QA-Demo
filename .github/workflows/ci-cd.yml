@@ -41,7 +41,7 @@ jobs:
       # Step 5: Start backend server
       - name: Start frontend server
         run: |
-          cd ../frontend
+          cd frontend
           npm start | tee backend.log &
         env:
           PORT: 3000
