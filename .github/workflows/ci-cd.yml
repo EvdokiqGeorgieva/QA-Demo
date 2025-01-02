@@ -41,8 +41,7 @@ jobs:
       # Step 5: Wait for backend to be ready
       - name: Wait for backend to start
         run: |
-          sleep 10
-          npx wait-on http://localhost:3001 --timeout 50000
+          npx wait-on http://localhost:3001 --timeout 60000 --log
 
       # Step 6: Run backend tests
       - name: Run backend Playwright tests
