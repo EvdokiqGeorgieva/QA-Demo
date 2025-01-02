@@ -41,8 +41,12 @@ jobs:
       # Step 5: Run backend tests
       - name: Run backend Playwright tests
         run: npm run test:backend
+      
+      # Step 6: Install Playwright browsers
+      - name: Install Playwright browsers
+        run: npx playwright install
 
-      # Step 6: Start frontend server
+      # Step 7: Start frontend server
       - name: Start frontend server
         run: |
           cd frontend
