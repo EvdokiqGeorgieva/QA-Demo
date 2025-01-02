@@ -1,5 +1,5 @@
 import express from 'express';
-import users from '../data/users.json'
+import users from '../data/users.json' with { type: 'json' };
 
 const router = express.Router();
 
@@ -16,4 +16,4 @@ router.post('/login', (req, res) => {
     return res.status(200).send({message: 'Login successful!'});
 });
 
-module.exports = router;
+export default router;

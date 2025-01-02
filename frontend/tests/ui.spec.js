@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import * as locators from './locators.js';
+import locators from './locators.js';
 import { URL, USERS, MESSAGES } from './constants.js';
 
 test.describe('Login Page UI Tests', () => {

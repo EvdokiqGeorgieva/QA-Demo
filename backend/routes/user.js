@@ -1,5 +1,5 @@
 import express from 'express';
-import users from '../data/users.json'
+import users from '../data/users.json' with { type: 'json' };
 
 const router = express.Router();
 
@@ -18,4 +18,4 @@ router.get('/:username', (req, res) => {
     });
 });
 
-module.exports = router;
+export default router;

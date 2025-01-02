@@ -1,6 +1,6 @@
 import { defineConfig } from '@playwright/test';
 
-module.exports = defineConfig({
+export default defineConfig({
     testDir: './tests',
     use: {
         baseURL: 'http://localhost:3002',

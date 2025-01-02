@@ -17,5 +17,6 @@
         "@playwright/test": "^1.49.1"
     },
     "author": "Eva G.",
-    "license": "ISC"
+    "license": "ISC",
+    "type": "module"
 }

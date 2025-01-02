@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     loginForm: 'form#login-form',
     usernameInput: 'input#username',
     passwordInput: 'input#password',
