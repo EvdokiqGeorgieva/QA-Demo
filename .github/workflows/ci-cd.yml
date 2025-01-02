@@ -50,10 +50,14 @@ jobs:
       - name: Start frontend server
         run: |
           cd frontend
-          npm start | tee backend.log &
+          npm start | tee frontend.log &
         env:
           PORT: 3002
 
-      # Step 8: Run frontend tests
+      # Step 8: Wait for frontend to be ready
+      - name: Wait for frontend to be ready
+        run: npx wait-on http://localhost:3002 --timeout 120000 --interval 5000 --log
+
+      # Step 9: Run frontend tests
       - name: Run frontend Playwright tests
         run: npm run test:frontend

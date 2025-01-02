@@ -4,7 +4,7 @@
   "description": "Simple frontend for testing purposes",
   "main": "/src/app.js",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3002 react-scripts start",
     "test": "react-scripts test",
     "build": "react-scripts build",
     "test:ui": "npx playwright test tests/ui.spec.js"
