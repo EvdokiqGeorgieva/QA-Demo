@@ -52,7 +52,7 @@ jobs:
           cd frontend
           npm start | tee backend.log &
         env:
-          PORT: 3000
+          PORT: 3002
 
       # Step 8: Run frontend tests
       - name: Run frontend Playwright tests
